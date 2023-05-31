@@ -25,13 +25,13 @@ class MainWindow(QMainWindow):
         self.rect_button.clicked.connect(lambda: self.draw('rectangle'))
         self.arc_button = QPushButton("Tracer un arc", self)
         self.arc_button.clicked.connect(lambda: self.draw('arc'))
-        # self.oval_button = QPushButton("Tracer un oval", self)
+        # self.oval_button = QPushButton.py("Tracer un oval", self)
         # self.oval_button.clicked.connect(self.canvas.draw('oval'))
-        # self.poly_button = QPushButton("Tracer un polygon", self)
+        # self.poly_button = QPushButton.py("Tracer un polygon", self)
         # self.poly_button.clicked.connect(self.canvas.draw('polygon'))
-        # self.color_button = QPushButton("Autre couleur", self)
+        # self.color_button = QPushButton.py("Autre couleur", self)
         # self.color_button.clicked.connect(self.canvas.change_color)
-        # self.target_button = QPushButton("Viseur", self)
+        # self.target_button = QPushButton.py("Viseur", self)
         # self.target_button.clicked.connect(self.canvas.draw('viseur'))
 
         # Ajout des boutons dans un layout horizontal

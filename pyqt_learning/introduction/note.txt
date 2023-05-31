@@ -15,3 +15,7 @@
     The widget is the most important point of the user interface:
     it receives mouse, keyboard and other events from the window system,
     paints a representation of itself on the screen
+
+-Convert ui files to python file command
+    pycuic6 -x file.ui -o output.py
+

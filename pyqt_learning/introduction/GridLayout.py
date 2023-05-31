@@ -9,7 +9,7 @@ class Window(QWidget):
 
         self.setGeometry(200, 200, 700, 400)
         self.setWindowTitle('GridLayout')
-        self.setWindowIcon(QIcon('images/OIP.jpg'))
+        self.setWindowIcon(QIcon('../images/OIP.jpg'))
         # self.setFixedWidth(700)
         # self.setFixedHeight(400)
         # self.setStyleSheet("background-color:gray")
