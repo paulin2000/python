@@ -1,0 +1,5 @@
+- Listes -
+  les listes sont un tableau contenant des elements qui peuvent être de type different 
+  del() qui permet de supprimer un élement au sein du tableau (del(jour[3]))
+  append(valeur) permet d'ajouter un élement en fin de tableau
+

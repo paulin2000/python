@@ -1,0 +1,97 @@
+import sys
+from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QLabel, QFrame
+from PyQt5.QtGui import QPainter, QPen
+from PyQt5.QtCore import Qt
+import random
+
+
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+
+        self.setWindowTitle("PyQt Drawing")
+        self.setGeometry(100, 100, 500, 400)
+
+        # Création d'un widget de canevas
+        self.canvas = Canvas(self)
+        self.setCentralWidget(self.canvas)
+
+        # Création de boutons
+        self.quit_button = QPushButton("Quitter", self)
+        self.quit_button.clicked.connect(self.close)
+        self.line_button = QPushButton("Tracer une ligne", self)
+        self.line_button.clicked.connect(self.draw)
+
+
+        # Ajout des boutons dans un layout horizontal
+        button_layout = QHBoxLayout()
+        button_layout.addWidget(self.quit_button)
+        button_layout.addWidget(self.line_button)
+
+
+        # Ajout du layout des boutons dans un layout vertical
+        main_layout = QVBoxLayout()
+        main_layout.addWidget(self.canvas)
+        main_layout.addLayout(button_layout)
+
+        # Définition du layout principal de la fenêtre
+        widget = QWidget()
+        widget.setLayout(main_layout)
+        self.setCentralWidget(widget)
+
+    def draw(self, arg):
+        print('parent')
+        self.canvas.draw()
+
+
+class Canvas(QFrame):
+    def __init__(self, parent):
+        super().__init__(parent)
+
+        self.setMinimumSize(500, 400)
+        self.setAutoFillBackground(True)
+        self.palette().setColor(self.backgroundRole(), Qt.darkGray)
+        self.pen_color = Qt.darkGreen
+        self.target_pen = QPen(self.pen_color, 2, Qt.SolidLine)
+        self.qp = QPainter()
+
+    def paintEvent(self, event):
+        qp = self.qp
+        qp.setPen(self.target_pen)
+        qp.begin(self)
+        qp.end()
+
+    def draw(self):
+        print('salut les naz')
+        self.change_color()
+        self.qp.drawLine(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255),random.randint(0, 255))
+        self.update()
+        # print(qp, self.target_pen,qp.drawLine(10, 190, 190, 9), "qb")
+
+        # switcher: dict = {
+        #     "line": lambda: qp.drawLine(10, 190, 190, 9),
+        #     # "rectangle":,
+        #     # "arc":,
+        #     # "oval":,
+        #     # "polygon":,
+        #     # "viseur":
+        # }
+        # func = switcher.get(arg)
+        # if func:
+
+        #     func()
+
+    def change_color(self):
+        red = random.randint(0, 255)
+        green = random.randint(0, 255)
+        blue = random.randint(0, 255)
+        self.pen_color = (red, green, blue)
+        print(self.pen_color, "color")
+        return
+
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    ex = MainWindow()
+    ex.show()
+    sys.exit(app.exec_())

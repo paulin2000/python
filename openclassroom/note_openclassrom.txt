@@ -1,0 +1,5 @@
+- les exceptions -
+  try ... except
+- les assertions -
+  les assertions sont un moyen simple de s'assurer, avant de continuer, qu'une condition est respectée
+  eg: assert (condition: boolean)

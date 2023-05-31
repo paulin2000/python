@@ -1,0 +1,40 @@
+- Premier pas avec tkinter -
+  La classe est en quelque sorte un modèle général à partir duquel on demande à la machine de construire un objet informatique particulier.
+
+  La classe Tk() est l'une des classes les plus fondamentales de la bibliothèque tkinter, elle contient tout ce qu'il faut pour engrendrer différents types de fenêtre d'application, de tailles ou de couleurs diverses, avec ou sans barre de menus, etc.
+
+  Une classe est une sorte de conteneur dans lequel sont regroupées des fonctions et des données
+
+  Une méthode est une fonction greffé à un objet
+
+  tex1 = Label(fen1, text="Bonjour tout le monde !", fg="red")
+  Le premier argument transmis (fen1), indique que le nouveau widget que nous sommes en train de créer sera contenu dans un autre widget préexistant, que nous désignons donc ici comme son maître : l'objet fen1 est le widget maître de l'objet text1. On pourra dire que l'objet tex1 est un widget esclave de l'objet fen1
+  fg : foreground couleur de l'avant plan du texte
+
+
+
+  La méthode pack() fait partie d’un ensemble de méthodes qui sont applicables non seulement
+  aux widgets de la classe Label(), mais aussi à la plupart des autres widgets tkinter, et qui agissent
+  sur leur disposition géométrique dans la fenêtre. Comme vous pouvez le constater par
+  vous-même si vous entrez les commandes de notre exemple une par une, la méthode pack()
+  réduit automatiquement la taille de la fenêtre « maître » afin qu’elle soit juste assez grande pour
+  contenir les widgets « esclaves » définis au préalable.
+  La méthode pack() est utilisé pour adapter la géométrie de la fenêtre au nouvel objet que nous venons d'y intégrer.
+
+  Etant donné que Button est un objet interactif, nous devons préciser avec l'option command ce qui devra se passer lorsque l'utilisateur effectuera un clic sur le button.  Dans ce cas précis la méthode destroy associée à l'objet fen1, ce qui devrait provoquer l'effacement de la fenêtre.
+
+  fen1.mainloop() est très importante, parce que c'est elle qui provoque le démarrage du réceptionnaire d'évenement d'évenement associée à la fenêtre. Cette instruction es nécessaire pour que notre application soit à l'affût des clics de souris. des pressions exercées sur les touches du clavier. C'est donc une instruction qui la met en marche
+  Il s'agit d'une méthode de l'objet fen1 qui active une boucle de programme, laquelle tournera en permanence en tâche de fond, dans l'attente de messages émis par le sytème d'exploitation de l'ordinateur 
+
+- Programme pilotés par des évènements -
+  Tous les programmes d’ordinateur comportent grosso-modo trois phases
+  principales : une phase d’initialisation, laquelle contient les instructions qui
+  préparent le travail à effectuer (appel des modules externes nécessaires,
+  ouverture de fichiers, connexion à un serveur de bases de données ou à l’Internet, etc.), une phase centrale où l’on trouve la véritable fonctionnalité du
+  programme (c’est-à-dire tout ce qu’il est censé faire : afficher des données à
+  l’écran, effectuer des calculs, modifier le contenu d’un fichier, imprimer, etc.), et
+  enfin une phase de terminaison qui sert à clôturer « proprement » les opérations
+  (c’est-à-dire fermer les fichiers restés ouverts, couper les connexions externes,
+  etc.).
+
+- Tracé de ligne -
